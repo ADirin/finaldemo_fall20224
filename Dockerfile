@@ -5,7 +5,7 @@ FROM maven:latest
 WORKDIR /app
 
 # Copy the JAR file from the target directory
-COPY target/finalDemoApp.jar /app/appdemo.jar
+COPY ../target/finalDemoApp.jar /app/appdemo.jar
 
 # Specify the command to run the JAR file
 CMD ["java", "-jar", "/app/appdemo.jar"]
