@@ -14,7 +14,12 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <build>
+
+    <!-- Add this section to change the name of the JAR file -->
+    <finalName>finalDemoApp</finalName>
+
     <plugins>
+      <!-- Compiler Plugin for setting the Java version -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -24,14 +29,32 @@
           <target>21</target> <!-- or your Java version -->
         </configuration>
       </plugin>
+
+      <!-- JAR Plugin for configuring the manifest file -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.4.1</version>
+            <configuration>
+              <archive>
+                <manifest>
+                  <mainClass>org.example.App</mainClass>
+                </manifest>
+              </archive>
+            </configuration>
+          </plugin>
+
+
+
     </plugins>
   </build>
+
 
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
